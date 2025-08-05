@@ -7,7 +7,7 @@ def root_view(request):
     return JsonResponse({"message": "Bem-vindo ao microsserviço Django!"})
 
 urlpatterns = [
-    path('', root_view),
+    path('', include('core.urls')),
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
 ]

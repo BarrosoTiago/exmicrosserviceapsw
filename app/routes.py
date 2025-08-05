@@ -1,12 +1,13 @@
 from flask import Blueprint, request, jsonify
 from .models import User
 from .database import db
+from flask import render_template
 
 main = Blueprint('main', __name__)
 
 @main.route('/')
 def index():
-    return 'Microsserviço está funcionando!'
+    return render_template('index.html')
 
 @main.route('/users', methods=['POST'])
 def create_user():
